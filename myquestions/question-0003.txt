@@ -1,0 +1,6 @@
+El Problema: Tienes un conjunto de datos con una estructura geométrica compleja que las técnicas lineales como PCA no logran capturar. Deseas reducir la dimensionalidad usando una variedad no lineal (Isomap) antes de aplicar un algoritmo de agrupamiento.
+Tu Misión: Escribe una función llamada isomap_kmeans_clustering(X, n_neighbors_isomap, n_clusters) que:
+Escale las características de la matriz X (numpy array) utilizando StandardScaler.
+Aplique el algoritmo Isomap de sklearn.manifold con n_neighbors=n_neighbors_isomap para reducir los datos a 2 componentes principales.
+Utilice KMeans (con random_state=42) sobre estas 2 componentes para identificar n_clusters.
+Devuelva una tupla con dos elementos: un array de numpy con las coordenadas en el espacio reducido de Isomap (shape n_samples, 2) y un array de numpy con las etiquetas de los clústeres asignadas.

@@ -1,0 +1,7 @@
+El Problema: Para conjuntos de datos muy pequeños, la validación cruzada tradicional (K-Fold) puede ser inestable. Necesitas implementar un esquema de validación de "dejar uno fuera" (Leave-One-Out) para obtener una estimación más exhaustiva del error del modelo.
+Tu Misión: Escribe una función llamada evaluar_robustez_loocv(X, y, modelo_tipo) que:
+Reciba una matriz de características X y un vector objetivo y.
+Instancie el modelo de sklearn según el parámetro: si modelo_tipo es 'linear' usa LinearRegression, si es 'ridge' usa Ridge(alpha=1.0).
+Configure un esquema de validación cruzada usando LeaveOneOut de sklearn.model_selection.
+Calcule el Error Cuadrático Medio (MSE) utilizando cross_val_score con el esquema LOOCV y el scoring 'neg_mean_squared_error'.
+Devuelva el promedio del MSE como un valor float positivo (recuerda que cross_val_score devuelve valores negativos para el error).

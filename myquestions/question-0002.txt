@@ -1,0 +1,7 @@
+El Problema: Una empresa desea identificar qué departamentos tienen la mayor disparidad salarial relativa. Para ello, no basta con mirar la desviación estándar, sino el coeficiente de variación (CV), que permite comparar la dispersión entre grupos con diferentes escalas de ingresos.
+Tu Misión: Escribe una función llamada analizar_desigualdad_salarial(df, depto_col, salario_col, umbral_cv) que:
+Agrupe los datos por la columna depto_col.
+Calcule para cada departamento el promedio (mean) y la desviación estándar (std) de la columna salario_col.
+Calcule el coeficiente de variación definido como CV = std / mean.
+Filtre únicamente los departamentos donde el CV sea mayor o igual al umbral_cv.
+Devuelva un DataFrame con las columnas [depto_col, 'mean_salario', 'cv_salario'], ordenado de mayor a menor según el coeficiente de variación y con el índice reiniciado.

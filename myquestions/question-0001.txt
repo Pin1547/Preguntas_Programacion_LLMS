@@ -1,0 +1,7 @@
+El Problema: En una red de sensores de alta frecuencia, a veces se producen "ráfagas" de datos erróneos donde un sensor envía múltiples registros en un intervalo de tiempo extremadamente corto (menos de unos pocos segundos). Necesitas identificar estos registros para auditarlos.
+Tu Misión: Escribe una función llamada detectar_rafagas_sensores(df, sensor_col, tiempo_col, margen_segundos) que:
+Convierta la columna tiempo_col a objetos datetime de pandas si no lo están.
+Ordene el DataFrame por sensor_col y tiempo_col de forma ascendente.
+Calcule la diferencia de tiempo entre registros consecutivos del mismo sensor utilizando operaciones vectorizadas (puedes usar groupby y diff).
+Cree una columna booleana llamada es_rafaga que sea True si el tiempo transcurrido desde el registro anterior del mismo sensor es estrictamente menor a margen_segundos. El primer registro de cada sensor siempre debe ser False.
+Devuelva el DataFrame original con la nueva columna añadida, conservando el orden original de las filas (si el orden cambió por el paso 2, debes restaurarlo).
