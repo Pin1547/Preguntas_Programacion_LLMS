@@ -38,5 +38,10 @@ def clasificar_ley_oro(df: pd.DataFrame, test_size: float):
     f1 = f1_score(y_test, y_pred)
     matriz_conf = confusion_matrix(y_test, y_pred)
 
-    # 7. Retornar resultados
-    return accuracy, f1, matriz_conf, modelo
+    # 7. Retornar en el mismo formato que el generador
+    return {
+        "accuracy": accuracy,
+        "f1_score": f1,
+        "matriz_confusion": matriz_conf,
+        "modelo_entrenado": modelo
+    }
