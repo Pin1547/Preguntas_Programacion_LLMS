@@ -2,10 +2,11 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import OneClassSVM
 
-def detectar_piezas_defectuosas(X_train, X_test=None):
-    if isinstance(X_train, dict) and X_test is None:
-        X_test = X_train["input"]["X_test"]
-        X_train = X_train["input"]["X_train"]
+def detectar_piezas_defectuosas(X_train=None, X_test=None, input=None, output=None):
+    # Si el evaluador pasa el diccionario con clave "input"
+    if input is not None:
+        X_train = input["X_train"]
+        X_test = input["X_test"]
 
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
